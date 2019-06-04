@@ -19,7 +19,7 @@ DYNAMIC=diabloSerial.so
 DEBUG	= -O2
 CC	= gcc
 INCLUDE	= -I.
-CFLAGS	= $(DEBUG) -Wall $(INCLUDE) -Winline -pipe
+CFLAGS	= $(DEBUG) -Wall $(INCLUDE) -Winline -pipe -fPIC
 
 #LIBS    = -lpthread
 
@@ -42,7 +42,7 @@ $(STATIC):	$(OBJ)
 
 $(DYNAMIC):     $(OBJ)
 	@echo "[Link (Dynamic)]"
-	@$(CC) -shared -Wl,-soname,libdiabloSerial.so -o libdiabloSerial.so -lpthread $(OBJ) -lrt
+	@$(CC) -shared -Wl,-soname,libdiabloSerial.so -o libdiabloSerial.so -lpthread $(OBJ) -lrt -fPIC
 .c.o:
 	@echo [Compile] $<
 	@$(CC) -c $(CFLAGS) $< -o $@
