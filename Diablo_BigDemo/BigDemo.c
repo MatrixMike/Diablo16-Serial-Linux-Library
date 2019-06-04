@@ -31,9 +31,9 @@
 #include <ctype.h>
 #include <termios.h>
 #include <sys/stat.h>
-#include <diabloSerial.h>
-#include <Diablo_Types4D.h>
-#include <Diablo_const4D.h>
+#include "diabloSerial.h"
+#include "Diablo_Types4D.h"
+#include "Diablo_const4D.h"
 #include <unistd.h>
 #include <sys/types.h>
 #include "BigDemo.h"
